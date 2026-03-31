@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: macos-15
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: |
+          project=$(find . -maxdepth 1 -name '*.xcodeproj' -print -quit)
+          scheme=$(basename "$project" .xcodeproj)
+          xcodebuild -project "$project" -scheme "$scheme" -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
