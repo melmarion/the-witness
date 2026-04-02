@@ -3,6 +3,7 @@ import SwiftUI
 /// Main game coordinator view with touch controls.
 /// Drag left/right to move, tap to jump, long press to plant seed, tap objects to interact.
 struct GameView: View {
+    @Environment(\.scenePhase) private var scenePhase
     @StateObject private var engine = GameEngine()
     @StateObject private var audio = AudioEngine()
 
@@ -33,7 +34,16 @@ struct GameView: View {
             audio.startAmbience()
         }
         .onDisappear {
+            engine.save()
             audio.stop()
+        }
+        .onChange(of: scenePhase) { newPhase in
+            if newPhase != .active {
+                engine.save()
+            }
+        }
+        .onReceive(Timer.publish(every: 2, on: .main, in: .common).autoconnect()) { _ in
+            engine.save()
         }
     }
 

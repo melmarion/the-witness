@@ -68,4 +68,11 @@ final class TerrainGenerator {
         }
         return total / Double(GameConstants.zoneCount)
     }
+
+    func apply(zoneLevels: [Double]) {
+        self.zoneLevels = Array(zoneLevels.prefix(GameConstants.zoneCount))
+        if self.zoneLevels.count < GameConstants.zoneCount {
+            self.zoneLevels += Array(repeating: 0, count: GameConstants.zoneCount - self.zoneLevels.count)
+        }
+    }
 }

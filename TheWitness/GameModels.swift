@@ -17,7 +17,7 @@ enum GameConstants {
 }
 
 // MARK: - Tree DNA (branching parameters)
-struct TreeDNA {
+struct TreeDNA: Codable {
     var branchAngle: Double   // a: .3-.5 (dead) or .33-.61 (alive)
     var branchRatio: Double   // r: .6-.7 (dead) or .61-.74 (alive)
     var depth: Int            // d: 3-4 (dead) or 4-5 (alive)
@@ -28,7 +28,7 @@ struct TreeDNA {
 }
 
 // MARK: - Tree
-struct Tree: Identifiable {
+struct Tree: Identifiable, Codable {
     let id = UUID()
     var worldX: Double
     var baseY: Double         // computed from terrain height
@@ -42,7 +42,7 @@ struct Tree: Identifiable {
 }
 
 // MARK: - Visual Effect
-struct VisualEffect: Identifiable {
+struct VisualEffect: Identifiable, Codable {
     let id = UUID()
     var x: Double
     var y: Double
@@ -50,13 +50,13 @@ struct VisualEffect: Identifiable {
     var duration: Double
     var type: EffectType
 
-    enum EffectType {
+    enum EffectType: Codable {
         case plant, water, touch, ash, ground
     }
 }
 
 // MARK: - Mycelium Connection
-struct MyceliumLink: Identifiable {
+struct MyceliumLink: Identifiable, Codable {
     let id = UUID()
     var aX: Double
     var aY: Double
@@ -67,7 +67,7 @@ struct MyceliumLink: Identifiable {
 }
 
 // MARK: - Bird
-struct Bird: Identifiable {
+struct Bird: Identifiable, Codable {
     let id = UUID()
     var x: Double
     var y: Double
@@ -80,7 +80,7 @@ struct Bird: Identifiable {
 }
 
 // MARK: - Particle (ash or pollen)
-struct Particle: Identifiable {
+struct Particle: Identifiable, Codable {
     let id = UUID()
     var x: Double
     var y: Double
@@ -91,7 +91,7 @@ struct Particle: Identifiable {
     var phase: Double
     var speed: Double
 
-    enum ParticleType {
+    enum ParticleType: Codable {
         case ash, leaf
     }
 }

@@ -87,3 +87,15 @@ final class PlayerState {
         return x + camX
     }
 }
+
+struct PlayerSnapshot: Codable {
+    let x: Double
+    let y: Double
+    let vx: Double
+    let vy: Double
+    let isGrounded: Bool
+    let facingRight: Bool
+    let alpha: Double
+    let leafCount: Int
+    let windInfluence: Double
+}

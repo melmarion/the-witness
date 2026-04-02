@@ -3,6 +3,7 @@ import CoreGraphics
 
 /// Central game state — owns all mutable game data and runs the simulation tick.
 final class GameEngine: ObservableObject {
+    private static let saveKey = "thewitness.world"
 
     // MARK: - Published state (drives SwiftUI redraws via TimelineView)
     let terrain: TerrainGenerator
@@ -37,6 +38,7 @@ final class GameEngine: ObservableObject {
         self.player = PlayerState()
         generateInitialTrees()
         generateParticles()
+        restore()
     }
 
     // MARK: - Initial world population
@@ -318,4 +320,90 @@ final class GameEngine: ObservableObject {
             wx += step
         }
     }
+
+    func save() {
+        let snapshot = WitnessSnapshot(
+            zoneLevels: terrain.zoneLevels,
+            player: PlayerSnapshot(
+                x: player.x,
+                y: player.y,
+                vx: player.vx,
+                vy: player.vy,
+                isGrounded: player.isGrounded,
+                facingRight: player.facingRight,
+                alpha: player.alpha,
+                leafCount: player.leafCount,
+                windInfluence: player.windInfluence
+            ),
+            trees: trees,
+            effects: effects,
+            mycelium: mycelium,
+            birds: birds,
+            particles: particles,
+            seeds: seeds,
+            planted: planted,
+            worldLife: worldLife,
+            ashCollected: ashCollected,
+            time: time,
+            dayTime: dayTime,
+            camX: camX,
+            camY: camY
+        )
+
+        guard let data = try? JSONEncoder().encode(snapshot) else { return }
+        UserDefaults.standard.set(data, forKey: Self.saveKey)
+    }
+
+    func restore() {
+        guard
+            let data = UserDefaults.standard.data(forKey: Self.saveKey),
+            let snapshot = try? JSONDecoder().decode(WitnessSnapshot.self, from: data)
+        else { return }
+
+        terrain.apply(zoneLevels: snapshot.zoneLevels)
+        player.x = snapshot.player.x
+        player.y = snapshot.player.y
+        player.vx = snapshot.player.vx
+        player.vy = snapshot.player.vy
+        player.isGrounded = snapshot.player.isGrounded
+        player.facingRight = snapshot.player.facingRight
+        player.alpha = snapshot.player.alpha
+        player.leafCount = snapshot.player.leafCount
+        player.windInfluence = snapshot.player.windInfluence
+        trees = snapshot.trees
+        effects = snapshot.effects
+        mycelium = snapshot.mycelium
+        birds = snapshot.birds
+        particles = snapshot.particles
+        seeds = snapshot.seeds
+        planted = snapshot.planted
+        worldLife = snapshot.worldLife
+        ashCollected = snapshot.ashCollected
+        time = snapshot.time
+        dayTime = snapshot.dayTime
+        camX = snapshot.camX
+        camY = snapshot.camY
+    }
+
+    func clearSave() {
+        UserDefaults.standard.removeObject(forKey: Self.saveKey)
+    }
+}
+
+private struct WitnessSnapshot: Codable {
+    let zoneLevels: [Double]
+    let player: PlayerSnapshot
+    let trees: [Tree]
+    let effects: [VisualEffect]
+    let mycelium: [MyceliumLink]
+    let birds: [Bird]
+    let particles: [Particle]
+    let seeds: Int
+    let planted: Int
+    let worldLife: Double
+    let ashCollected: Int
+    let time: Double
+    let dayTime: Double
+    let camX: Double
+    let camY: Double
 }
