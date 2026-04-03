@@ -1,20 +1,25 @@
 # The Witness
 
-SwiftUI contemplative side-scrolling platformer with procedural terrain, fractal trees, seed planting, and mycelium-inspired ecological systems.
+The Witness is a contemplative SwiftUI side-scrolling platformer built around procedural terrain, seed planting, and mycelium-flavored ecological feedback loops.
 
-## Highlights
+The project is less interested in twitch mastery than in world response: plant something, alter the landscape, watch the environment answer back.
 
-- Procedural terrain and world rendering
-- Seed planting and ecological feedback loops
-- Fractal tree and effects rendering
-- Native SwiftUI game shell with touch controls
+## Current Shape
 
-## Requirements
+- procedural terrain and world rendering
+- seed planting and ecological feedback
+- fractal tree generation and visual effects
+- native SwiftUI game shell with touch controls
 
-- Xcode 15 or newer
-- iOS 16+
+## Why It’s Interesting
 
-## Run
+The central pleasure is systems intimacy:
+
+- the world is generated, not just drawn
+- planting changes the scene instead of merely incrementing inventory
+- the ecology is part of the mechanic, not background dressing
+
+## Running Locally
 
 1. Open `TheWitness.xcodeproj`
 2. Select the `TheWitness` scheme
@@ -22,4 +27,4 @@ SwiftUI contemplative side-scrolling platformer with procedural terrain, fractal
 
 ## Status
 
-The project is ready for build automation and deterministic tests around terrain generation and simulation state.
+The best next work is deterministic testing around terrain generation and simulation state, plus build automation.
