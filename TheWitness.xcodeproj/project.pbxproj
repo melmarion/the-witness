@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA000001 /* TheWitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000011; };
+				CBAC64887602 /* ReviewManager.swift */,
 		AA000002 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000012; };
 		AA000003 /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000013; };
 		AA000004 /* PerlinNoise.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000014; };
@@ -18,14 +19,19 @@
 		AA000009 /* Effects.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000019; };
 		AA00000A /* GameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00001A; };
 		AA00000B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA00001B; };
+				CBAC64887601 /* PrivacyInfo.xcprivacy */,
+				CAAC64887601 /* PrivacyInfo.xcprivacy in Resources */,
 		AA00000C /* WorldRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00001C; };
 		AA00000D /* WorldCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00001D; };
 		AA00000E /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00001E; };
+		CAAC64887601 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = CBAC64887601; };
+		CAAC64887602 /* ReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAC64887602; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AA000010 /* TheWitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheWitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA000011 /* TheWitnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheWitnessApp.swift; sourceTree = "<group>"; };
+				CBAC64887602 /* ReviewManager.swift */,
 		AA000012 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		AA000013 /* GameEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
 		AA000014 /* PerlinNoise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerlinNoise.swift; sourceTree = "<group>"; };
@@ -36,9 +42,12 @@
 		AA000019 /* Effects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effects.swift; sourceTree = "<group>"; };
 		AA00001A /* GameModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModels.swift; sourceTree = "<group>"; };
 		AA00001B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+				CBAC64887601 /* PrivacyInfo.xcprivacy */,
 		AA00001C /* WorldRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldRenderer.swift; sourceTree = "<group>"; };
 		AA00001D /* WorldCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldCanvasView.swift; sourceTree = "<group>"; };
 		AA00001E /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
+		CBAC64887601 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		CBAC64887602 /* ReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				AA000011 /* TheWitnessApp.swift */,
+				CBAC64887602 /* ReviewManager.swift */,
 				AA000012 /* GameView.swift */,
 				AA000013 /* GameEngine.swift */,
 				AA000014 /* PerlinNoise.swift */,
@@ -77,6 +87,7 @@
 				AA00001D /* WorldCanvasView.swift */,
 				AA00001E /* AudioEngine.swift */,
 				AA00001B /* Assets.xcassets */,
+				CBAC64887601 /* PrivacyInfo.xcprivacy */,
 			);
 			path = TheWitness;
 			sourceTree = "<group>";
@@ -148,6 +159,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA00000B /* Assets.xcassets in Resources */,
+				CBAC64887601 /* PrivacyInfo.xcprivacy */,
+				CAAC64887601 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA000001 /* TheWitnessApp.swift in Sources */,
+				CBAC64887602 /* ReviewManager.swift */,
 				AA000002 /* GameView.swift in Sources */,
 				AA000003 /* GameEngine.swift in Sources */,
 				AA000004 /* PerlinNoise.swift in Sources */,
@@ -229,7 +243,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -285,7 +299,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -312,7 +326,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.thewitness.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.melmarion.TheWitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -340,7 +354,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.thewitness.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.melmarion.TheWitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
