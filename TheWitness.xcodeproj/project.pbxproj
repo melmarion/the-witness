@@ -180,6 +180,8 @@
 		AA0000A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -242,6 +244,8 @@
 		AA0000A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -297,6 +301,8 @@
 		AA0000B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -326,6 +332,8 @@
 		AA0000B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
