@@ -45,4 +45,4 @@ platformer,nature,procedural,seeds,mycelium,trees,contemplative,zen,exploration,
 Initial release.
 
 ## Support URL
-https://github.com/melmarion/the-witness
+https://github.com/moranetz/the-witness

@@ -6,7 +6,7 @@
   <key>teamID</key><string>Q242KWQD56</string>
   <key>signingStyle</key><string>manual</string>
   <key>provisioningProfiles</key>
-  <dict><key>com.melmarion.thewitness</key><string>com.melmarion.thewitness AppStore</string></dict>
+  <dict><key>com.moranetz.thewitness</key><string>com.moranetz.thewitness AppStore</string></dict>
   <key>signingCertificate</key><string>Apple Distribution: MARION MORANETZ (Q242KWQD56)</string>
 </dict>
 </plist>

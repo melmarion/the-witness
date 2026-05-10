@@ -13,7 +13,7 @@ platform :ios do
 
   lane :release do
     produce(
-      app_identifier: "com.melmarion.thewitness",
+      app_identifier: "com.moranetz.thewitness",
       app_name: "The Witness",
       team_id: "Q242KWQD56"
     )
@@ -23,7 +23,7 @@ platform :ios do
       clean: true,
       export_method: "app-store",
       export_options: "./ExportOptions.plist",
-      xcargs: "CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM=Q242KWQD56 CODE_SIGN_IDENTITY='Apple Distribution: MARION MORANETZ (Q242KWQD56)' PROVISIONING_PROFILE_SPECIFIER='com.melmarion.thewitness AppStore'"
+      xcargs: "CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM=Q242KWQD56 CODE_SIGN_IDENTITY='Apple Distribution: MARION MORANETZ (Q242KWQD56)' PROVISIONING_PROFILE_SPECIFIER='com.moranetz.thewitness AppStore'"
     )
     upload_to_app_store(
       skip_screenshots: true,
